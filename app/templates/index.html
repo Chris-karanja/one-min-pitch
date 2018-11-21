@@ -4,6 +4,17 @@
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
-
 {% block content %}
+
+<div class="jumbotron container center">
+    <h1>Pitch Project</h1>
+    <p>You have a minute to pitch your brilliant ideas for users to give feedback</p>
+    <a href="{{ url_for('main.new') }}"><button class="btn btn-success">Pitch </button></a>
+</div>
+{%- for pitch in pitches %}
+<div class="jumbotron container">
+    <h3><a href="/posts/{{ pitch.id }}">{{ pitch.title }}</a></h3>
+    <p>{{ pitch.text }}</p>
+</div>
+{%- endfor %}
 {% endblock %}

@@ -15,19 +15,32 @@ class User(UserMixin,db.Model):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True,index = True)
-    password_hash = db.Column(db.String(255))
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
+    password_secure = db.Column(db.String(255))
+
 
 @property
 def password(self):
     raise AttributeError('You cannnot read the password attribute')
+
+class Pitch(db.Model):
+    __tablename__ = 'pitches'
+    id = db.Column('pitch_id', db.Integer, primary_key=True)
+    title = db.Column(db.String(60))
+    text = db.Column(db.String(300))
+    def __init__(self, title, text):
+        self.title = title
+        self.text = text
 
 @password.setter
 def password(self, password):
     self.password_hash = generate_password_hash(password)
 
 
+
 def verify_password(self,password):
-    return check_password_hash(self.password_hash,password)
+    return check_password_hash(self.pass_secure,password)
 
 def __repr__(self):
     return f'User {self.username}'

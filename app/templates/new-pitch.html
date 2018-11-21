@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form action="" method=post class="form-horizontal">
+        <h2>Create New Pitch</h2>
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" id="title" name="title" class="input-xlarge form-control" placeholder="Blog Post Title"
+                    value="{{ request.form.title }}" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <textarea name="text" rows=10 class="input-xlarge  form-control" placeholder="Post Article Here"
+                    required>{{ request.form.text }}</textarea>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">Pitch</button>
+                <a href="{{ url_for('main.index') }}">Back to Pitches</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
