@@ -9,9 +9,9 @@ from .. import db
 
 @main.route('/')
 def index():
-    return render_template('index.html')
-    pitches=Pitch.query.all()
-    
+    return render_template('index.html',
+        pitches=Pitch.query.all()
+    )
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -30,4 +30,4 @@ def new():
         db.session.add(new_pitch)
         db.session.commit()
         return redirect(url_for('main.index'))
-    return render_template('new.html')  
+    return render_template('new-pitch.html')  

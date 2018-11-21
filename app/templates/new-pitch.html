@@ -5,14 +5,14 @@
         <h2>Create New Pitch</h2>
         <div class="control-group">
             <div class="controls">
-                <input type="text" id="title" name="title" class="input-xlarge form-control" placeholder="Blog Post Title"
+                <input type="text" id="title" name="title" class="input-xlarge form-control" placeholder="Title"
                     value="{{ request.form.title }}" required>
             </div>
         </div>
 
         <div class="control-group">
             <div class="controls">
-                <textarea name="text" rows=10 class="input-xlarge  form-control" placeholder="Post Article Here"
+                <textarea name="text" rows=10 class="input-xlarge  form-control" placeholder="Post pitch Here"
                     required>{{ request.form.text }}</textarea>
             </div>
         </div>
