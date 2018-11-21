@@ -20,10 +20,11 @@ Install python 3.6
 Run chmod a+x start.py
 Run ./start.py ​
 Link to deployed site
+http://one-min-pitches.herokuapp.com
 ​
 
 Known bugs
-ImportError: cannot import name 'auth'
+heroku deployment wont work yet
 
 Technologies used
 Python 3.6

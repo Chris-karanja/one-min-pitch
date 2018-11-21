@@ -1,3 +1,7 @@
-virtual/
+.env
+your virtual environment/
+__pycache__/
 *.pyc
-start.sh
+instance/config.py
+.vscode/
+.idea
